@@ -40,6 +40,4 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
-          tags: |
-            ghcr.io/meroxa/nodejs-funtime-sample:latest
-            ghcr.io/meroxa/nodejs-funtime-sample:1.0.0
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/nodejs-funtime-sample:latest
