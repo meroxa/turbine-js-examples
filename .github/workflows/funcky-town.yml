@@ -41,4 +41,4 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/nodejs-funtime-sample:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.sha}}:latest
