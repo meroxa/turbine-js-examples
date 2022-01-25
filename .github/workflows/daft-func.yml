@@ -1,9 +1,6 @@
-name: Funcky Town
+name: DAFT Func
 
 on:
-  push:
-    branches:
-      - master
   repository_dispatch:
 
 jobs:
@@ -12,16 +9,16 @@ jobs:
 
     steps:
       -
-        name: Check out functions repository
+        name: Check out daft-func repository
         uses: actions/checkout@v2
         with:
-          repository: meroxa/funcky-town
-          token: ${{ secrets.FUNCKY_TOWN_ACCESS_TOKEN}}
+          repository: meroxa/daft-func
+          token: ${{ secrets.DAFT_FUNC_ACCESS_TOKEN}}
       -
         name: Check out this repository
         uses: actions/checkout@v2
         with:
-          path: data-app
+          path: ./lib/deploy-function/data-app
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -38,7 +35,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: .
+          context: ./lib/function-deploy/data-app
           platforms: linux/amd64
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.sha }}:latest
