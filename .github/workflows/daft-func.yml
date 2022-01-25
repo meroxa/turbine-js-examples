@@ -18,7 +18,7 @@ jobs:
         name: Check out this repository
         uses: actions/checkout@v2
         with:
-          path: ./lib/deploy-function/data-app
+          path: ./lib/function-deploy/data-app
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -35,7 +35,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: ./lib/function-deploy/data-app
+          context: ./lib/function-deploy
           platforms: linux/amd64
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.sha }}:latest
