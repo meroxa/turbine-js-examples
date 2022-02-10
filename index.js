@@ -6,8 +6,8 @@ function iAmHelping(str) {
 
 exports.Anonymize = function Anonymize(records) {
   records.forEach((record) => {
-    record.payload.email = iAmHelping(
-      stringHash(record.payload.email).toString()
+    record.value.payload.after.email = iAmHelping(
+      stringHash(record.value.payload.after.email).toString()
     );
   });
 
@@ -16,18 +16,18 @@ exports.Anonymize = function Anonymize(records) {
 
 exports.App = class App {
   async run(DAFTFunc) {
-    let db = await DAFTFunc.resources("pg");
+    let sourceDB = await DAFTFunc.resources("pg");
 
     // Create source connector
-    let records = await db.records("user_activity");
+    let records = await sourceDB.records("user_activity");
 
     // Deploy function with source as input
     let anonymized = await DAFTFunc.process(records, exports.Anonymize);
 
     // Get destination resource
-    let otherDB = await DAFTFunc.resources("pg2");
+    let destinationDB = await DAFTFunc.resources("s3333");
 
     // Create destination connector with function output as input
-    await otherDB.write(anonymized, "user_activity");
+    await destinationDB.write(anonymized, "user_activity");
   }
 };

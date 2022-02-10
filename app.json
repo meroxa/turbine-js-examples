@@ -1,0 +1,9 @@
+{
+  "name": "nodejs-sample-data-app",
+  "language": "js",
+  "environment": "common",
+  "pipeline": "default",
+  "resources": {
+    "pg": "fixtures/pg.json"
+  }
+}
