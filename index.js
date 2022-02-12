@@ -15,17 +15,17 @@ exports.Anonymize = function Anonymize(records) {
 };
 
 exports.App = class App {
-  async run(DAFTFunc) {
-    let sourceDB = await DAFTFunc.resources("pg");
+  async run(turbine) {
+    let sourceDB = await turbine.resources("pg");
 
     // Create source connector
     let records = await sourceDB.records("user_activity");
 
     // Deploy function with source as input
-    let anonymized = await DAFTFunc.process(records, exports.Anonymize);
+    let anonymized = await turbine.process(records, exports.Anonymize);
 
     // Get destination resource
-    let destinationDB = await DAFTFunc.resources("s3333");
+    let destinationDB = await turbine.resources("s3");
 
     // Create destination connector with function output as input
     await destinationDB.write(anonymized, "user_activity");

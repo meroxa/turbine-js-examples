@@ -44,8 +44,8 @@ turbine test
 ```
 
 ### To run the sample app in platform mode ("I am ready to run/deploy my data app as meroxa platform services")
-Make sure you have a PG resource on the meroxa platform called `pg` and an S3 resource called `s3333`
-Currently, we only support pipelines that look like PG -> fn -> S3. Another restriction is that we only support PG resources using the debezium connector, which means you should have logical replication enabled on your database.
+Make sure you have a PG resource on the meroxa platform called `pg` and an S3 resource called `s3`
+Currently, this only supports pipelines that look like PG -> fn -> S3. Another restriction is that this only supports PG resources using the debezium connector, which means you should have logical replication enabled on your database.
 
 ```
 turbine deploy
