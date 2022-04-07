@@ -16,7 +16,7 @@ exports.Anonymize = function Anonymize(records) {
 
 exports.App = class App {
   async run(turbine) {
-    let sourceDB = await turbine.resources("pg");
+    let sourceDB = await turbine.resources("demopg");
 
     // Create source connector
     let records = await sourceDB.records("user_activity");
@@ -28,6 +28,6 @@ exports.App = class App {
     let destinationDB = await turbine.resources("s3");
 
     // Create destination connector with function output as input
-    await destinationDB.write(anonymized, "user_activity");
+    await destinationDB.write(anonymized, "data-app-archive");
   }
 };
