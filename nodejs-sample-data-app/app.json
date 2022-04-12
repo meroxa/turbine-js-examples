@@ -1,8 +1,0 @@
-{
-  "name": "nodejs-sample-data-app",
-  "language": "js",
-  "environment": "common",
-  "resources": {
-    "pg": "fixtures/pg.json"
-  }
-}
