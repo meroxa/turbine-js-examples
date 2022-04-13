@@ -1,7 +1,7 @@
 // Call relevant dependencies to the data app
 const { updateIndex } = require('./algolia.js');
 
-const SendToAlgolia = function Anonymize(records) {
+const SendToAlgolia = function (records) {
   const requests = records.map(record => {
     return updateIndex(record);
   });
