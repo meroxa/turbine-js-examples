@@ -4,11 +4,18 @@ function iAmHelping(str) {
   return `~~~${str}~~~`;
 }
 
+function isAttributePresent(attr) {
+  return typeof(attr) !== 'undefined' && attr !== null;
+}
+
 exports.Anonymize = function Anonymize(records) {
   records.forEach((record) => {
-    record.value.payload.customer_email = iAmHelping(
-      stringHash(record.value.payload.customer_email).toString()
-    );
+    let payload = record.value.payload;
+    if (isAttributePresent(payload.after) && isAttributePresent(payload.after.customer_email)) {
+      payload.after.customer_email = iAmHelping(
+        stringHash(payload.after.customer_email).toString(),
+      );
+    }
   });
 
   return records;
