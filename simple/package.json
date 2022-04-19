@@ -8,6 +8,7 @@
   "devDependencies": {
     "qunit": "^2.18.0"
   },
+  "license": "MIT",
   "scripts": {
     "test": "qunit ./**.test.js"
   }
