@@ -50,3 +50,7 @@ Currently, this only supports pipelines that look like PG -> fn -> S3. Another r
 ```
 turbine deploy
 ```
+
+### License
+
+Licensed under the [MIT License](./LICENSE.md).
