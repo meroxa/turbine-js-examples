@@ -1,56 +1,10 @@
-# turbine-js-examples
+# Turbine JS Examples
 
-## Dependencies
-- Node
-- Yarn
+[Turbine JS](https://docs.meroxa.com/turbine/get-started) is a data application framework for building server-side applications that are event-driven, respond to data in real-time, and scale using cloud-native best practices.
 
-## Installation
-Install turbine-js:
-```
-npm install -g git+ssh://git@github.com/meroxa/turbine-js.git
-```
-Note, due to the turbine-js repo being private, turbine-js is NOT a dependency for the data app, although in the future it will be.
+In this repository, you may find the following examples:
 
-This is why we install turbine-js globally 👆 instead of project local.
+- [Real-time Data Lake Ingestion with Turbine](https://docs.meroxa.com/guides/2022/04/20/real-time-data-lake-ingestion-with-turbine) - `real-time-data-lake-ingestion`
+- [Real-time eCommerce Order Data Warehousing and Alerting with Turbine](https://docs.meroxa.com/guides/2022/04/20/real-time-ecommerce-order-data-warehousing-and-alerting-with-turbine) - `ecommerce-order-alerting`
+- [Real-time Search Indexing with Turbine and Algolia](https://docs.meroxa.com/guides/2022/04/20/real-time-search-indexing-with-turbine-and-algolia) - `search-indexing-algolia`
 
-Next, clone this repo
-```
-git clone git@github.com:meroxa/turbine-js-examples.git
-
-cd turbine-js-examples
-```
-
-Create a `.env` in the project root and fill out the fields, or make sure these are set in your environment before running
-```
-# Meroxa API Auth token
-AUTH_TOKEN=
-
-# Meroxa API URL
-MEROXA_API_URL=https://api.staging.meroxa.io
-
-# Dockerhub username
-DOCKERHUB_PREFIX=
-
-# Dockerhub image name (can be anything)
-DOCKERHUB_IMAGE_NAME=
-
-# Dockerhub access token
-DOCKERHUB_ACCESS_TOKEN=
-```
-
-### To run the sample app in local mode ("I am just locally testing that my data app works")
-```
-turbine test
-```
-
-### To run the sample app in platform mode ("I am ready to run/deploy my data app as meroxa platform services")
-Make sure you have a PG resource on the meroxa platform called `pg` and an S3 resource called `s3`
-Currently, this only supports pipelines that look like PG -> fn -> S3. Another restriction is that this only supports PG resources using the debezium connector, which means you should have logical replication enabled on your database.
-
-```
-turbine deploy
-```
-
-### License
-
-Licensed under the [MIT License](./LICENSE.md).
