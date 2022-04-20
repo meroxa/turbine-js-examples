@@ -10,6 +10,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "test": "qunit ./**.test.js"
+    "test": "qunit ./**.test.js",
+    "dev": "meroxa app run",
+    "deploy": "meroxa app deploy"
   }
 }
