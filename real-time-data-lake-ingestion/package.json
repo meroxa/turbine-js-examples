@@ -1,5 +1,5 @@
 {
-  "name": "simple",
+  "name": "real-time-data-lake-ingestion",
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
