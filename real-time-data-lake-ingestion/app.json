@@ -1,0 +1,8 @@
+{
+  "name": "simple",
+  "language": "javascript",
+  "environment": "common",
+  "resources": {
+    "pg": "fixtures/demo-no-cdc.json"
+  }
+}
