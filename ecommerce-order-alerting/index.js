@@ -13,12 +13,12 @@ exports.App = class App {
   async run(turbine) {
     let source = await turbine.resources("pg");
 
-    let records = await source.records("customerOrders");
+    let records = await source.records("customer_order");
 
     let data = await turbine.process(records, this.sendAlert);
 
     let destination = await turbine.resources("snowflake");
 
-    await destination.write(data, "customerOrders");
+    await destination.write(data, "customer_order");
   }
 };

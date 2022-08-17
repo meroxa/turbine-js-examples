@@ -16,7 +16,7 @@ function updateIndex(record) {
             console.log(`saved ${after.id}`)
         }).catch((err) => {
             console.log(`error saving ${after.id}`)
-            reject(err)
+            Promise.reject(err)
         })
 
     } else if (op === 'd') {
@@ -26,7 +26,7 @@ function updateIndex(record) {
             resolve(before)
         }).catch((err) => {
             console.log(`error deleting ${before.id}`)
-            reject(err)
+            Promise.reject(err)
         })
     }
 }
