@@ -10,13 +10,13 @@ jobs:
     steps:
       -
         name: Check out daft-func repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: meroxa/daft-func
           token: ${{ secrets.DAFT_FUNC_ACCESS_TOKEN}}
       -
         name: Check out this repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           path: ./lib/function-deploy/data-app
       -
