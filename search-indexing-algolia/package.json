@@ -5,12 +5,15 @@
   "dependencies": {
     "@meroxa/turbine-js": "^0.4.2",
     "algoliasearch": "^4.13.0",
+    "prettier": "^2.7.1",
     "string-hash": "^1.1.3"
   },
   "devDependencies": {
     "qunit": "^2.18.0"
   },
   "scripts": {
+    "prettier:check": "prettier --check './**/*.{js,ts,json}'",
+    "prettier:makeitpretty": "prettier --write './**/*.{js,ts,json}'",
     "test": "qunit ./**.test.js",
     "dev": "meroxa app run",
     "deploy": "meroxa app deploy"

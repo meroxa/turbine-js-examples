@@ -39,12 +39,28 @@
               "fields": [
                 { "field": "id", "optional": false, "type": "int32" },
                 { "field": "category", "optional": false, "type": "string" },
-                { "field": "product_type", "optional": false, "type": "string" },
-                { "field": "product_name", "optional": false, "type": "string" },
+                {
+                  "field": "product_type",
+                  "optional": false,
+                  "type": "string"
+                },
+                {
+                  "field": "product_name",
+                  "optional": false,
+                  "type": "string"
+                },
                 { "field": "stock", "optional": false, "type": "boolean" },
                 { "field": "product_id", "optional": false, "type": "int32" },
-                { "field": "shipping_address", "optional": false, "type": "string" },
-                { "field": "customer_email", "optional": false, "type": "varchar" }
+                {
+                  "field": "shipping_address",
+                  "optional": false,
+                  "type": "string"
+                },
+                {
+                  "field": "customer_email",
+                  "optional": false,
+                  "type": "varchar"
+                }
               ],
               "name": "resource.public.User.Value",
               "optional": true,
@@ -55,12 +71,28 @@
               "fields": [
                 { "field": "id", "optional": false, "type": "int32" },
                 { "field": "category", "optional": false, "type": "string" },
-                { "field": "product_type", "optional": false, "type": "string" },
-                { "field": "product_name", "optional": false, "type": "string" },
+                {
+                  "field": "product_type",
+                  "optional": false,
+                  "type": "string"
+                },
+                {
+                  "field": "product_name",
+                  "optional": false,
+                  "type": "string"
+                },
                 { "field": "stock", "optional": false, "type": "boolean" },
                 { "field": "product_id", "optional": false, "type": "int32" },
-                { "field": "shipping_address", "optional": false, "type": "string" },
-                { "field": "customer_email", "optional": false, "type": "varchar" }
+                {
+                  "field": "shipping_address",
+                  "optional": false,
+                  "type": "string"
+                },
+                {
+                  "field": "customer_email",
+                  "optional": false,
+                  "type": "varchar"
+                }
               ],
               "name": "resource.public.User.Value",
               "optional": true,
@@ -155,12 +187,28 @@
               "fields": [
                 { "field": "id", "optional": false, "type": "int32" },
                 { "field": "category", "optional": false, "type": "string" },
-                { "field": "product_type", "optional": false, "type": "string" },
-                { "field": "product_name", "optional": false, "type": "string" },
+                {
+                  "field": "product_type",
+                  "optional": false,
+                  "type": "string"
+                },
+                {
+                  "field": "product_name",
+                  "optional": false,
+                  "type": "string"
+                },
                 { "field": "stock", "optional": false, "type": "boolean" },
                 { "field": "product_id", "optional": false, "type": "int32" },
-                { "field": "shipping_address", "optional": false, "type": "string" },
-                { "field": "customer_email", "optional": false, "type": "varchar" }
+                {
+                  "field": "shipping_address",
+                  "optional": false,
+                  "type": "string"
+                },
+                {
+                  "field": "customer_email",
+                  "optional": false,
+                  "type": "varchar"
+                }
               ],
               "name": "resource.public.User.Value",
               "optional": true,
@@ -171,12 +219,28 @@
               "fields": [
                 { "field": "id", "optional": false, "type": "int32" },
                 { "field": "category", "optional": false, "type": "string" },
-                { "field": "product_type", "optional": false, "type": "string" },
-                { "field": "product_name", "optional": false, "type": "string" },
+                {
+                  "field": "product_type",
+                  "optional": false,
+                  "type": "string"
+                },
+                {
+                  "field": "product_name",
+                  "optional": false,
+                  "type": "string"
+                },
                 { "field": "stock", "optional": false, "type": "boolean" },
                 { "field": "product_id", "optional": false, "type": "int32" },
-                { "field": "shipping_address", "optional": false, "type": "string" },
-                { "field": "customer_email", "optional": false, "type": "varchar" }
+                {
+                  "field": "shipping_address",
+                  "optional": false,
+                  "type": "string"
+                },
+                {
+                  "field": "customer_email",
+                  "optional": false,
+                  "type": "varchar"
+                }
               ],
               "name": "postgres.public.User.Value",
               "optional": true,
