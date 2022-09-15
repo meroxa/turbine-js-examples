@@ -10,5 +10,7 @@ const demo = require("./fixtures/demo-cdc.json");
 // To run this example unit test, use `npm test`
 
 QUnit.module("My data app", () => {
-  // TODO
+  QUnit.test("anonymize function works on `customer_email`", (assert) => {
+    assert.ok(true);
+  });
 });

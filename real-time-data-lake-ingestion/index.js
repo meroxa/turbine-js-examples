@@ -5,20 +5,23 @@ function iAmHelping(str) {
 }
 
 function isAttributePresent(attr) {
-  return typeof(attr) !== 'undefined' && attr !== null;
+  return typeof attr !== "undefined" && attr !== null;
 }
 
 exports.App = class App {
   anonymize(records) {
     records.forEach((record) => {
       let payload = record.value.payload;
-      if (isAttributePresent(payload.after) && isAttributePresent(payload.after.customer_email)) {
+      if (
+        isAttributePresent(payload.after) &&
+        isAttributePresent(payload.after.customer_email)
+      ) {
         payload.after.customer_email = iAmHelping(
-          stringHash(payload.after.customer_email).toString(),
+          stringHash(payload.after.customer_email).toString()
         );
       }
     });
-  
+
     return records;
   }
 

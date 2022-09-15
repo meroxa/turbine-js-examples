@@ -14,7 +14,11 @@
             { "field": "product_name", "optional": false, "type": "string" },
             { "field": "stock", "optional": false, "type": "boolean" },
             { "field": "product_id", "optional": false, "type": "int32" },
-            { "field": "shipping_address", "optional": false, "type": "string" },
+            {
+              "field": "shipping_address",
+              "optional": false,
+              "type": "string"
+            },
             { "field": "customer_email", "optional": false, "type": "varchar" },
             {
               "field": "created_at",
@@ -68,7 +72,11 @@
             { "field": "product_name", "optional": false, "type": "string" },
             { "field": "stock", "optional": false, "type": "boolean" },
             { "field": "product_id", "optional": false, "type": "int32" },
-            { "field": "shipping_address", "optional": false, "type": "string" },
+            {
+              "field": "shipping_address",
+              "optional": false,
+              "type": "string"
+            },
             { "field": "customer_email", "optional": false, "type": "varchar" },
             {
               "field": "created_at",
@@ -122,7 +130,11 @@
             { "field": "product_name", "optional": false, "type": "string" },
             { "field": "stock", "optional": false, "type": "boolean" },
             { "field": "product_id", "optional": false, "type": "int32" },
-            { "field": "shipping_address", "optional": false, "type": "string" },
+            {
+              "field": "shipping_address",
+              "optional": false,
+              "type": "string"
+            },
             { "field": "customer_email", "optional": false, "type": "varchar" },
             {
               "field": "created_at",
@@ -164,6 +176,3 @@
     }
   ]
 }
-
-
-

@@ -1,4 +1,4 @@
-const { sendSlackMessage } = require('./alert.js');
+const { sendSlackMessage } = require("./alert.js");
 
 exports.App = class App {
   sendAlert(records) {
@@ -6,7 +6,7 @@ exports.App = class App {
       let payload = record.value.payload;
       sendSlackMessage(payload);
     });
-  
+
     return records;
   }
 

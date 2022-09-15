@@ -1,0 +1,70 @@
+name: CI
+on:
+  pull_request:
+jobs:
+  pretty:
+    name: Check style
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+      - name: prettier:check for ecommerce-order-alerting
+        working-directory: ecommerce-order-alerting
+        run: |
+          npm install
+          npm run prettier:check
+      - name: prettier:check for real-time-data-lake-ingestion
+        working-directory: real-time-data-lake-ingestion
+        run:  |
+          npm install
+          npm run prettier:check
+      - name: prettier:check for search-indexing-algolia
+        working-directory: search-indexing-algolia
+        run:  |
+          npm install
+          npm run prettier:check
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+      - name: Run tests for ecommerce-order-alerting
+        working-directory: ecommerce-order-alerting
+        run:  |
+          npm install
+          npm run test
+      - name: Run tests for real-time-data-lake-ingestion
+        working-directory: real-time-data-lake-ingestion
+        run:  |
+          npm install
+          npm run test
+      - name: Run tests for search-indexing-algolia
+        working-directory: search-indexing-algolia
+        run:  |
+          npm install
+          npm run test
+  run:
+    name: Run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+      - name: Install CLI
+        run: brew tap meroxa/taps && brew install meroxa
+      - name: Run real-time-data-lake-ingestion with CLI
+        working-directory: real-time-data-lake-ingestion
+        run: |
+          npm install
+          meroxa apps run
+          
+    
