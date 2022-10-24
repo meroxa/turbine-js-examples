@@ -4,7 +4,7 @@ on:
 jobs:
   pretty:
     name: Check style
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
       - name: Use Node
@@ -28,7 +28,7 @@ jobs:
           npm run prettier:check
   test:
     name: Test
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
       - name: Use Node
@@ -52,7 +52,7 @@ jobs:
           npm run test
   run:
     name: Run
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
       - name: Use Node
@@ -66,5 +66,3 @@ jobs:
         run: |
           npm install
           meroxa apps run
-          
-    
