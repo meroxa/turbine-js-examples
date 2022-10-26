@@ -1,0 +1,29 @@
+{
+  "name": "user-demo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "prisma generate && next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.12.0",
+    "@prisma/client": "^4.5.0",
+    "@tailwindcss/forms": "^0.3.2",
+    "axios": "^0.21.1",
+    "chance": "^1.1.7",
+    "mongodb": "^3.6.6",
+    "mongodb-client-encryption": "^1.2.3",
+    "next": "12.3.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "swr": "^0.5.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.10",
+    "prisma": "^4.5.0",
+    "tailwindcss": "^2.1.1"
+  }
+}
