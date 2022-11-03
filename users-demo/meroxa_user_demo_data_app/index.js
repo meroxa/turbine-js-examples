@@ -1,20 +1,10 @@
-// Import any of your relevant dependencies
-const stringHash = require("string-hash");
-
-// Sample helper
-function iAmHelping(str) {
-  return `~~~${str}~~~`;
-}
-
 exports.App = class App {
   // Create a custom named function on the App to be applied to your records
-  anonymize(records) {
+  logRecord(records) {
     records.forEach((record) => {
-      // Use record `get` and `set` to read and write to your data
-      record.set(
-        "customer_email",
-        iAmHelping(stringHash(record.get("customer_email")))
-      );
+      const dateTimeGmt = new Date().toGMTString()
+      
+      console.log(`${dateTimeGmt} [DEBUG] Streaming Record To Destination ${JSON.stringify(record)}`)
     });
 
     records.unwrap();
@@ -24,14 +14,14 @@ exports.App = class App {
 
   async run(turbine) {
 
-    let source = await turbine.resources("migration_users_app_pg");
+    let source = await turbine.resources("pg_db");
 
-    let records = await source.records("public.User");
+    let records = await source.records("User");
 
-    // let anonymized = await turbine.process(records, this.anonymize);
+    let logger = await turbine.process(records, this.logRecord);
 
-    let destination = await turbine.resources("migration_users_app_mongo");
+    let destination = await turbine.resources("mongo_db");
 
-    await destination.write(records, "user_table_from_postgres");
+    await destination.write(logger, "user_table_from_pg");
   }
 };
