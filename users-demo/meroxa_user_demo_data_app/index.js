@@ -2,13 +2,9 @@ exports.App = class App {
   // Create a custom named function on the App to be applied to your records
   logRecord(records) {
     records.forEach((record) => {
-      const today = new Date();
-      const dd = String(today.getDate()).padStart(2, '0');
-      const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-      const yyyy = today.getFullYear();
-      const timeStamp = `${yyyy}-${mm}-${dd} @ ${today.getHours()}:${today.getMinutes()}}`
+      const dateTimeGmt = new Date().toGMTString()
       
-      console.log(`${timeStamp} [DEBUG] Streaming Record To Destination ${JSON.stringify(record)}`)
+      console.log(`${dateTimeGmt} [DEBUG] Streaming Record To Destination ${JSON.stringify(record)}`)
     });
 
     records.unwrap();
