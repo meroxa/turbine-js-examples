@@ -1,10 +1,17 @@
+const { hashEmail } = require('./helpers.js');
+
 exports.App = class App {
   // Create a custom named function on the App to be applied to your records
   logRecord(records) {
     records.forEach((record) => {
+
+      record.set(
+        'email',
+        hashEmail(record.get('email'))
+      );
+
       const dateTimeGmt = new Date().toGMTString()
-      
-      console.log(`${dateTimeGmt} [DEBUG] Streaming Record To Destination ${JSON.stringify(record)}`)
+      console.log(`${dateTimeGmt} [DEBUG] Streaming Record To Destination ${JSON.stringify(record.get('name'))}`)
     });
 
     records.unwrap();
