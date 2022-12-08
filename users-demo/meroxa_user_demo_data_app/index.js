@@ -1,34 +1,47 @@
-const { hashEmail } = require('./helpers.js');
+// const { formatPhone, googleMapsLookup, generateAddressObject } = require('./helpers.js');
+// import sha256 from 'crypto-js/sha256';
+
 
 exports.App = class App {
-  // Create a custom named function on the App to be applied to your records
-  logRecord(records) {
-    records.forEach((record) => {
-
-      record.set(
-        'email',
-        hashEmail(record.get('email'))
-      );
-
+  processData(records) {
+    for (const record of records) {
       const dateTimeGmt = new Date().toGMTString()
-      console.log(`${dateTimeGmt} [DEBUG] Streaming Record To Destination ${JSON.stringify(record.get('name'))}`)
-    });
+      console.log(`[DEBUG] Streaming Record To Destination: ${dateTimeGmt}`)
+
+      // Encrypt data using a 3rd party library or package
+      // record.set(
+      //   'secretcode',
+      //   sha256(record.get('secretcode'))
+      // );
+
+      // Format Data via a custom function
+      // record.set('phone_number', formatPhone(record.get('phone_number')))
+      
+      // Enrich Data via an API
+      // const addressLookupResults = await googleMapsLookup(record.get('address'))
+      // const addressMetaData = generateAddressObject(addressLookupResults)
+      // record.set('address_metadata', addressMetaData);
+    }
 
     records.unwrap();
-
     return records;
   }
 
   async run(turbine) {
-
+    // First, identify your PostgreSQL source name as configured in Step 1
+    // In our case we named it pg_db
     let source = await turbine.resources("pg_db");
 
+    // Second, specify the table you want to access in your PostgreSQL DB
     let records = await source.records("User");
 
-    let logger = await turbine.process(records, this.logRecord);
+		// Third, Process each record that comes in!
+    let processed = await turbine.process(records, this.processData);
 
-    let destination = await turbine.resources("mongo_db");
+    // Fourth, identify your MongoDB destination resource configured in Step 1
+    let destination = await turbine.resources("mdb");
 
-    await destination.write(logger, "user_table_from_pg");
+    // Finally, specify which "collection" in mongo to write to. If none exists, it will be created
+    await destination.write(processed, "user_copy");
   }
 };
