@@ -1,14 +1,19 @@
-const stringHash = require('string-hash');
+function formatPhone() {
+    // Custom logic to format phone numbers
+    return
+}
 
-function hashEmail(str) {
-    let hashedEmail = str
-    if (str.length > 0) {
-        hashedEmail = stringHash(hashedEmail);
-    }
+function googleMapsLookup() {
+    // Api call
+    return
+}
 
-    return hashedEmail;
+function generateAddressObject() {
+    // Other helper function
 }
 
 module.exports = {
-    hashEmail
+    formatPhone,
+    googleMapsLookup,
+    generateAddressObject,
 }
