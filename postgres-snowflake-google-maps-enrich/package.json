@@ -1,0 +1,17 @@
+{
+  "name": "postgres-snowflake-google-maps-enrich",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@meroxa/turbine-js-framework": "^1.1.1",
+    "dotenv": "^16.0.3",
+    "request": "^2.88.2",
+    "util": "^0.12.5"
+  },
+  "devDependencies": {
+    "qunit": "^2.18.0"
+  },
+  "scripts": {
+    "test": "qunit ./**.test.js"
+  }
+}

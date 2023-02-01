@@ -1,0 +1,6 @@
+{
+  "name": "postgres-snowflake-google-maps-enrich",
+  "language": "javascript",
+  "environment": "common",
+  "resources": { "pg_db": "fixtures/demo-cdc.json" }
+}
